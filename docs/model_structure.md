@@ -1,6 +1,6 @@
 # SERNet model structure
 
-The table below transcribes the supplied architecture workbook. Click a module name to jump directly to its implementation in [`src/sernet_model.py`](../src/sernet_model.py). Output shapes and parameter counts are those recorded in the source table; they have not been independently recalculated.
+The table below transcribes the supplied architecture workbook. Click a module name to jump directly to its implementation in [`src/sernet_model.py`](../src/sernet_model.py).
 
 | Module | Layer setting | Output shape | Parameters | Code |
 |---|---|---:|---:|---|
