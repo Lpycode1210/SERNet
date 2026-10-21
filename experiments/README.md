@@ -50,17 +50,11 @@ partitions (6:2:2, disjoint subjects) and training protocol as the main model.
 
 ## Brief analysis
 
-- **Incremental modules (Cases 1→4).** Each proposed module contributes
-  consistently: adding XLSTM reduces the SBP MAE by 0.66 mmHg (PPG-BP) /
-  0.86 mmHg (MIMIC-III); the Fusion module brings a further 0.27 / 1.01 mmHg;
-  and the KFM-LSTM (FiLM modulation) yields another 0.42 / 0.67 mmHg, with the
-  same trend on DBP, confirming the necessity of every block in the FMSTE.
 - **Siamese path and evidential regression are complementary.** Used alone,
   the Siamese path (Case 5) and the evidential head (Case 6) each improve over
-  Case 4 (SBP 5.41→5.21/5.22 on PPG-BP and 5.78→5.50/5.56 on MIMIC-III);
+  Case 4 ;
   combining both with confidence gating (Case 9) produces by far the largest
-  gain, indicating that the two mechanisms address different error sources
-  (intra-subject variability vs. overconfident point estimation).
+  gain.
 - **Reference BP is indispensable (Case 7 vs. Case 9).** Zeroing the reference
   BP in the gating formula degrades the SBP MAE from 4.45 to 5.30 mmHg
   (PPG-BP) and from 5.16 to 5.42 mmHg (MIMIC-III), confirming that the
