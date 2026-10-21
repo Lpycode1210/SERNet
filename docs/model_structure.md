@@ -4,7 +4,7 @@ The table below transcribes the supplied architecture workbook. Click a module n
 
 | Module | Layer setting | Output shape | Parameters | Code |
 |---|---|---:|---:|---|
-| Input | PPG, VPG, APG waveform (4.2 s @ 100 Hz), demographic vector (age, gender, height, weight, BMI), and 34 additional PPG-derived features; the demographic and additional features are concatenated into the guidance feature `G` | `[B, 3, 420]`, `[B, 5]`, `[B, 34]` (`G`: `[B, 39]`) | 0 | — |
+| Input | PPG, VPG, APG waveform, demographic vector (age, gender, height, weight, BMI), and 34 additional PPG-derived features | `[B, 3, 420]`, `[B, 5]`, `[B, 34]` | 0 | — |
 | CNN: convolution block | Four `Conv1d(3×3) + BN + ReLU` layers, channels `3→32→32→64→64`, with two `MaxPool(2)` layers | `[B, 64, 105]` | 22,368 | [CNNModule](../src/sernet_model.py#L173-L232) |
 | CNN: residual blocks | Two 3-convolution residual blocks; first has `1×1 + BN` shortcut (`64→128`), second identity shortcut; final max pool | `[B, 128, 52]` | 280,320 | [BasicBlock](../src/sernet_model.py#L131-L171), [CNNModule](../src/sernet_model.py#L201-L232) |
 | KFM-LSTM: KAN-FiLM | Two KAN mappings (`39→128`, Fourier grid `k=5`), identity-style bias initialization; `X ← s₁·X + s₂` | `[B, 128, 52]` | 110,080 | [KANLinear](../src/sernet_model.py#L42-L72), [KANFiLMLayer](../src/sernet_model.py#L74-L105), [KFMLSTM](../src/sernet_model.py#L294-L342) |
