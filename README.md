@@ -28,14 +28,10 @@ For the Siamese path, pass `x_ref`, `demos_ref`, `extra_feats_ref`, and `label_r
 
 ## Requirements
 
-```bash
-python -m pip install -r requirements.txt
-```
-
-This repository contains the model definition only. Dataset loading, preprocessing, training configuration, and evaluation scripts are not included in the supplied materials.
+This repository contains the model definition only.
 
 ## Notes
 
-- The model expects signals of a length compatible with its pooling layers and the dimensions documented in the source workbook (the example architecture uses length 420).
-- No dataset, trained weights, or numerical supplementary experiment results are published here.
-- The model file keeps the complete `SERNet(nn.Module)` implementation as the exported `SERNet` class.
+- 
+- 
+- 
