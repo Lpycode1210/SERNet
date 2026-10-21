@@ -12,7 +12,7 @@ The manuscript PDF and source workbook are not included in this repository.
 
 ## Model overview
 
-SERNet uses a shared Feature-Modulated Spatio-Temporal Encoder (FMSTE), an absolute evidential regression head, and a Siamese differential evidential head. When reference samples and their labels are supplied, a confidence-driven gate combines absolute and differential predictions.
+SERNet utilizes a feature-modulated spatio-temporal encoder (FMSTE) to extract highly representative features of the PPG signals and their derivatives. By introducing an evidential regression head to parameterize the higher-order probability distribution of the predicted BP, it replaces traditional point estimation, thereby achieving uncertainty quantification. Furthermore, we designed a Siamese path with a shared encoder to predict the relative changes in BP values through the feature differences between the current input and a reference input, eliminating the impact of intra-subject variability. Finally, an output BP value with higher confidence is obtained through a confidence-driven gating mechanism.
 
 See the [linked architecture table](docs/model_structure.md) for module details and direct code links.
 
