@@ -4,7 +4,9 @@ This folder is reserved for supplementary experiments associated with SERNet.
 
 # Robustness to Data Partitioning: Ten Random Subject-wise Splits (MIMIC-III)
 
-Ten independent random subject-wise splits were performed on the MIMIC-III dataset. In each split, subjects were divided into training, validation, and test sets at a ratio of 6:2:2 with strictly disjoint subjects across the three sets (no data leakage), and the model was trained and evaluated independently, in order to verify that the reported performance does not depend on a particular partition.
+Ten independent random subject-wise splits were performed on the MIMIC-III dataset. In each split, subjects were divided into training, validation, and test sets at a ratio of 6:2:2 with strictly disjoint subjects across the three sets , and the model was trained and evaluated independently, in order to verify that the reported performance does not depend on a particular partition.The blood pressure (BP) distribution of the test sets across the ten random subject-wise splits is shown in the figure below.
+
+![Ten-split BP](test_dist_overview.png)
 
 ![Ten-split results](ten_split_results.png)
 
