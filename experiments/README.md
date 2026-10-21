@@ -61,11 +61,7 @@ partitions (6:2:2, disjoint subjects) and training protocol as the main model.
   Siamese path exploits genuine cross-subject reference information rather
   than trivial BP proximity.
 - **Uncertainty-driven gating outperforms fixed fusion (Case 8 vs. Case 9).**
-  Replacing the per-sample gate with a fixed weight (g = 0.5) degrades the
+  Replacing the per-sample gate with a fixed weight degrades the
   SBP/DBP MAE by 0.49/0.19 mmHg (PPG-BP) and 0.17/0.13 mmHg (MIMIC-III),
   demonstrating that adaptively trusting the less uncertain path on a
   per-sample basis is the key to fusing the absolute and differential paths.
-- **Full model remains the best and the most stable.** Case 9 achieves the
-  lowest MAE and the lowest SDE on both datasets (6.81/5.38 and 7.92/6.40
-  mmHg), satisfying the ANSI/AAMI limits (|ME| ≤ 5, SDE ≤ 8 mmHg) and
-  reproducing the clinical grades reported in Table IV.
